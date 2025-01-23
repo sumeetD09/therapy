@@ -1,0 +1,149 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1em;
+}
+
+header h1 {
+    display: inline;
+    margin: 0;
+}
+
+.dashboard-nav ul {
+    display: inline;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dashboard-nav ul li {
+    display: inline;
+    margin: 0 1em;
+}
+
+.dashboard-nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.search-login input {
+    padding: 0.5em;
+    margin-right: 1em;
+}
+
+.search-login a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 1em;
+}
+
+.dashboard-main {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+    padding: 2em;
+}
+
+.sessions-section {
+    flex: 2;
+    display: flex;
+    gap: 2em;
+    justify-content: space-between;
+}
+
+.session-box {
+    text-align: center;
+    flex: 1;
+    padding: 1em;
+    background: #f4f4f4;
+    border-radius: 8px;
+}
+
+.session-box .session-image {
+    width: 100%;
+    height: 150px;
+    background-color: #ddd;
+    margin-bottom: 1em;
+}
+
+.dashboard-sidebar {
+    flex: 1;
+    padding: 1em;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.date-time, .new-signups {
+    margin-bottom: 1em;
+}
+
+.notes-section {
+    flex: 3;
+    padding: 1em;
+    background: #fff;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.notes-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    justify-content: center;
+    margin-top: 1em;
+}
+
+.note-box {
+    width: 100px;
+    height: 100px;
+    background: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+.total-hours {
+    text-align: center;
+    padding: 1em;
+    background: #f4f4f4;
+    border-radius: 8px;
+}
+
+.dashboard-footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1em;
+    margin-top: 2em;
+}
+
+.dashboard-footer .social-links a {
+    color: #ff9900;
+    margin: 0 0.5em;
+    text-decoration: none;
+}
+
+.dashboard-footer .social-links a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .dashboard-main {
+        flex-direction: column;
+    }
+
+    .sessions-section {
+        flex-direction: column;
+    }
+}

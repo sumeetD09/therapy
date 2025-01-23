@@ -1,0 +1,141 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 500px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        input[type="text"], input[type="email"], input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        .payment-methods {
+            margin-bottom: 20px;
+        }
+        .hidden {
+            display: none;
+        }
+        .success-message {
+            color: green;
+            font-weight: bold;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            width: 100%;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container mt-5">
+    <h2>Payment Page</h2>
+
+    <form id="paymentForm" method="post">
+        {% csrf_token %}
+
+        <div class="payment-methods">
+            <label>
+                <input type="radio" name="paymentMethod" value="paypal" checked onclick="togglePaymentMethod()"> Pay with PayPal
+            </label>
+            <label>
+                <input type="radio" name="paymentMethod" value="creditCard" onclick="togglePaymentMethod()"> Pay with Credit Card
+            </label>
+        </div>
+
+        <!-- PayPal Fields -->
+        <div id="paypalFields">
+            <div class="form-group">
+                <label for="paypalEmail">PayPal Email</label>
+                <input type="email" id="paypalEmail" name="paypalEmail" placeholder="Enter your PayPal email" >
+            </div>
+        </div>
+
+        <!-- Credit Card Fields -->
+        <div id="creditCardFields" class="hidden">
+            <div class="form-group">
+                <label for="cardNumber">Card Number</label>
+                <input type="text" id="cardNumber" name="cardNumber" placeholder="Enter your card number" >
+            </div>
+            <div class="form-group">
+                <label for="cardHolderName">Card Holder's Name</label>
+                <input type="text" id="cardHolderName" name="cardHolderName" placeholder="Enter card holder's name" >
+            </div>
+            <div class="form-group">
+                <label for="expiryDate">Expiry Date</label>
+                <input type="text" id="expiryDate" name="expiryDate" placeholder="MM/YY" >
+            </div>
+            <div class="form-group">
+                <label for="cvv">CVV</label>
+                <input type="text" id="cvv" name="cvv" placeholder="Enter your CVV" >
+            </div>
+        </div>
+
+        <button type="submit">Submit Payment</button>
+    </form>
+
+    {% if messages %}
+        {% for message in messages %}
+            <p class="success-message">{{ message }}</p>
+        {% endfor %}
+    {% endif %}
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        togglePaymentMethod();
+    });
+
+    function togglePaymentMethod() {
+        const paymentMethod = document.querySelector('input[name="paymentMethod"]:checked').value;
+        const paypalFields = document.getElementById('paypalFields');
+        const creditCardFields = document.getElementById('creditCardFields');
+
+        if (paymentMethod === 'paypal') {
+            paypalFields.classList.remove('hidden');
+            creditCardFields.classList.add('hidden');
+        } else {
+            paypalFields.classList.add('hidden');
+            creditCardFields.classList.remove('hidden');
+        }
+    }
+</script>
+
+</body>
+</html>
+{% endblock content %}

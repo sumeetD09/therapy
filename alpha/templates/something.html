@@ -1,0 +1,266 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+/* Hero Section with Background Image */
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 60vh; /* Full-screen height */
+  background-image: url('https://imgs.search.brave.com/7wQjIJRNMkVsneTYcomErKLy1vC-cRUNtg4PKjVXark/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/ZmFicmljc2FuZHBh/cGVycy5jb20vbWVk/aWEvd3lzaXd5Zy9y/ZWQtZ3JleS1jb2xv/dXItc2NoZW1lLmpw/Zw');
+  background-size: cover; /* Ensures the background covers the entire section */
+  background-position: center; /* Centers the background image */
+  background-repeat: no-repeat; /* Prevents the background image from repeating */
+  display: flex;
+  justify-content: center; /* Centers the text horizontally */
+  align-items: center; /* Centers the text vertically */
+  flex-direction: column; /* Allows stacking text and button vertically */
+}
+
+/* Text inside the hero section */
+.hero-text {
+  text-align: center;
+  color: white; /* White text for contrast */
+  background-color: rgba(0, 0, 0, 0.5); /* Adds a semi-transparent black background for better text visibility */
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.hero-text h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.hero-text p {
+  font-size: 1.5rem;
+  margin-bottom: 40px;
+}
+
+/* Button Style */
+.hero-text button {
+  padding: 15px 30px;
+  background-color: #ff5e57;
+  color: white;
+  font-size: 1.25rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.hero-text button:hover {
+  background-color: #ff2a1a;
+  transform: scale(1.05);
+}
+
+/*--------------------------------------------------------------------------------*/
+/* Hero Section */
+#hero.th-hero {
+  position: relative;
+  height: 100vh; /* Full height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+  color: white;
+}
+
+/* Background Image (Blurred) */
+.th-hero__background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://www.greatlakespsychologygroup.com/wp-content/uploads/2021/12/glpg-online-therapy.png');
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+  filter: blur(8px); /* Blur the background image */
+  opacity: 0.7; /* Adjust transparency for a softer look */
+}
+
+/* Front Image (Non-blurred) */
+.th-hero__img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1; /* Keep it in front of the background */
+  width: 93%; /* Adjust image size as needed */
+  height: 90%;
+  object-fit: cover;
+}
+
+/* Title and Content */
+.th-hero__title {
+  font-size: 3rem;
+  font-weight: 600;
+  margin-bottom: 300px;
+  z-index: 2;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6); /* Text shadow for better readability */
+  padding: 0;
+}
+
+/* List styles */
+.th-hero__ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 40px;
+  z-index: 2;
+  
+}
+
+.th-hero__li {
+  font-size: 2rem;
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  z-index: 2;
+}
+
+.th-hero__li svg {
+  margin-right: 10px;
+  fill: #87bafd;
+  z-index: 2;
+}
+
+/* Button styles */
+.th-hero__buttons .button {
+  background-color: #87bafd;
+  color: white;
+  padding: 15px 30px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 600;
+  z-index: 2;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.th-hero__buttons .button:hover {
+  background-color: #6795d3;
+  transform: scale(1.05);
+}
+
+/* Container adjustments */
+.th-hero .container {
+  position: relative;
+  z-index: 2; /* Ensures text is above the background */
+}
+/*------------------------------------------------------------------------------------------------------*/
+/* Container Styling */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* Intro Section */
+.th-intro {
+  padding: 100px 20px;
+  background-color: #f9f9f9;
+  margin: 70px 0;
+}
+
+.th-intro__content {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.th-intro__title {
+  font-family: Erode, Georgia, serif; /* Cursive font */
+  font-size: 5rem;
+  color: #333;
+  flex-basis: 40%; /* Take up 40% width */
+  margin: 0;
+  text-align: left; /* Align title to the left */
+  padding-right: 20px;
+}
+
+.th-intro__text {
+  font-family: 'Roboto', sans-serif; /* Different font for the text */
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #666;
+  flex-basis: 60%; /* Take up 60% width */
+  margin: 0;
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  .th-intro__title, .th-intro__text {
+    flex-basis: 100%; /* Stack the content vertically on small screens */
+    text-align: center;
+    padding: 0;
+  }
+  .th-intro__title {
+    margin-bottom: 20px;
+  }
+}
+
+
+</style>
+
+<div class="hero-section">
+  <div class="hero-text">
+    <h1>Lost</h1>
+    <p>And I'm a Photographer</p>
+    <button>Hire me</button>
+  </div>
+</div>
+
+<section id="hero" class="th-hero">
+  <!-- Background Image (Blurred) -->
+  <div class="th-hero__background"></div>
+  
+  <!-- Front Image (Non-blurred) -->
+  <img class="th-hero__img" src="https://www.greatlakespsychologygroup.com/wp-content/uploads/2021/12/glpg-online-therapy.png" alt="" />
+
+  <div class="container">
+    <h1 class="th-hero__title">Online Therapy</h1>
+    <ul class="th-hero__ul">
+      <li class="th-hero__li">
+        <svg xmlns="http://www.w3.org/2000/svg" width="8" height="10">
+          <path fill="#87bafd" fill-rule="nonzero" d="M.344.744L7.656 5.4.344 10.056z"></path>
+        </svg>
+        Browse therapists who accept your insurance
+      </li>
+      <li class="th-hero__li">
+        <svg xmlns="http://www.w3.org/2000/svg" width="8" height="10">
+          <path fill="#87bafd" fill-rule="nonzero" d="M.344.744L7.656 5.4.344 10.056z"></path>
+        </svg>
+        Select a time that works for you
+      </li>
+      <li class="th-hero__li">
+        <svg xmlns="http://www.w3.org/2000/svg" width="8" height="10">
+          <path fill="#87bafd" fill-rule="nonzero" d="M.344.744L7.656 5.4.344 10.056z"></path>
+        </svg>
+        Book your session instantly
+      </li>
+    </ul>
+    <div class="th-hero__buttons">
+      <a class="button" href="https://findmytherapist.com">Find My Therapist</a>
+    </div>
+  </div>
+</section>
+
+<section class="th-intro">
+  <div class="container">
+    <h2 class="th-intro__title">What is Online Therapy?</h2><p class="th-intro__text">Online therapy brings the comfort and care of a therapist's office directly to you by way of video chatting. 
+
+Individuals of all ages with a reliable internet connection and camera-enabled device can gain access to quality mental healthcare with one of the licensed therapists from our network. 
+
+Give us a call today and find out how easy it is to get started.</p>  </div><!-- /.container -->
+</section>
+
+{% endblock content %}

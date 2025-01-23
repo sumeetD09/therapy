@@ -1,0 +1,155 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+  .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* Intro Section */
+.th-intro {
+  padding: 100px 20px;
+  background-color: #f9f9f9;
+  margin: 70px 0;
+}
+
+.th-intro__content {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.th-intro__title {
+  font-family: Erode, Georgia, serif; /* Cursive font */
+  font-size: 5rem;
+  color: #333;
+  flex-basis: 40%; /* Take up 40% width */
+  margin: 0;
+  text-align: left; /* Align title to the left */
+  padding-right: 20px;
+}
+
+.th-intro__text {
+  font-family: 'Roboto', sans-serif; /* Different font for the text */
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #666;
+  flex-basis: 60%; /* Take up 60% width */
+  margin: 0;
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  .th-intro__title, .th-intro__text {
+    flex-basis: 100%; /* Stack the content vertically on small screens */
+    text-align: center;
+    padding: 0;
+  }
+  .th-intro__title {
+    margin-bottom: 20px;
+  }
+}
+
+</style>
+<!-- 4444444444444444444444444444444444444444444444444444444444444444444444444444-->
+<div class="container-fluid   px-0">
+  <div id="carouselExampleDark" class="carousel carousel slide">
+    <div class="carousel-inner">
+      <div class="carousel-item active" data-bs-interval="10000">
+        <img src="https://media.istockphoto.com/id/1441931789/photo/modern-office-of-psychologist-for-work.jpg?s=612x612&w=0&k=20&c=D_6IfooHPPAmshrwPdKfY7SWjUbykMhTcXY8xwR5sRk=" class="d-block w-100" alt="..." style="width: 1600px; height: 600px;">
+        <div class="carousel-caption d-none d-md-block">
+          <h1><b>MY THERAPY PLACE</b></h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container px-4 py-5" id="custom-cards">
+  <h2 class="pb-2 border-bottom text-center">What Are You Looking For?</h2>
+  
+    <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+    <div class="col">
+     
+      <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('https://imgs.search.brave.com/ymQy4HO_ni5UjqRgL87Xe9L2V9tCR5r75W7okeQTw0o/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/ZnJlZS1waG90by9w/ZW9wbGUtc2hhcmlu/Zy1mZWVsaW5ncy1l/bW90aW9ucy1ncm91/cC10aGVyYXB5LXNl/c3Npb25fMjMtMjE1/MTA3Mzk5Ny5qcGc_/c2VtdD1haXNfaHli/cmlk');">
+        <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+          <a href="{% url 'sign_up' %}" class="text-white" ><h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Individual Therapy Sessions</h3></a>
+          <ul class="d-flex list-unstyled mt-auto">
+          </ul>
+        </div>
+      </div>
+      
+    </div>
+  
+
+  
+
+    <div class="col">
+      <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('https://imgs.search.brave.com/ikcKuNIgt4b6-sv_c9EYqmmRpngJ9jn2vpsNF2gM9Jc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzL2MwLzY0/L2ZhL2MwNjRmYTA2/YjYxMDMzMjE0ZGVk/NDRkNWU2OWM0MjVl/LmpwZw');">
+        <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+          <a href="{% url 'sign_up' %}" class="text-white" ><h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Couple Therapy Sessions</h3></a>
+          <ul class="d-flex list-unstyled mt-auto">
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('https://imgs.search.brave.com/iBbjH00EeEMgUfo-Hs63tVqAh8zgJp8UmyFIDuc0dVw/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzA1LzA5LzQ0LzUw/LzM2MF9GXzUwOTQ0/NTAyMl9UaGFEVm02/R25nYWpSaHVBWU0w/b2dqYUQ3ZnI2NXZi/ZC5qcGc');">
+        <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
+          <a href="{% url 'sign_up' %}" class="text-white" ><h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Family Therapy Sessions</h3></a>
+          <ul class="d-flex list-unstyled mt-auto">
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+  
+  <section class="th-intro">
+    <div class="container">
+      <h2 class="th-intro__title">What is Online Therapy?</h2><p class="th-intro__text">Online therapy brings the comfort and care of a therapist's office directly to you by way of video chatting. 
+  
+  Individuals of all ages with a reliable internet connection and camera-enabled device can gain access to quality mental healthcare with one of the licensed therapists from our network. 
+  
+  Give us a call today and find out how easy it is to get started.</p>  </div><!-- /.container -->
+  </section>
+
+  
+
+  
+
+
+
+<section class="stats">
+  <h3>Our Numbers Tell a Story</h3>
+  <p>We’ve helped people in countless ways. Join our growing community.</p>
+  <div class="stats-grid">
+    <div class="stat-item">
+      <h4>89+</h4>
+      <p>Therapists</p>
+    </div>
+    <div class="stat-item">
+      <h4>998+</h4>
+      <p>Sessions</p>
+    </div>
+    <div class="stat-item">
+      <h4>11000+</h4>
+      <p>Users</p>
+    </div>
+  </div>
+</section>
+
+
+
+
+{% endblock content %}

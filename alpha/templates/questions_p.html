@@ -1,0 +1,144 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Questionnaire</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f4f7f6;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      max-width: 800px;
+      background: white;
+      padding: 30px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+
+    p {
+      font-size: 14px;
+      color: #555;
+    }
+
+    label {
+      font-weight: 600;
+      margin-bottom: 8px;
+      display: block;
+      color: #333;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+      font-size: 16px;
+      outline: none;
+      background-color: #f9f9f9;
+    }
+
+    textarea {
+      height: 100px;
+      resize: none;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #5A67D8;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #4C51BF;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .disclaimer {
+      font-size: 12px;
+      color: #777;
+      text-align: center;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  
+
+  <div class="container">
+    <h1>Therapy Questionnaire</h1>
+    <p>Please fill out this form to help us understand your needs better.</p>
+
+    <form action="#" method="POST">
+        {% csrf_token %}
+       
+      <div class="form-group">
+        <label for="q1">Why are you seeking therapy?</label>
+        <textarea id="q1" name="q1" required></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="q2">How long have you been experiencing these issues?</label>
+        <select id="q2" name="q2" required>
+          <option value="">Select an option</option>
+          <option value="Less than 1 month">Less than 1 month</option>
+          <option value="1-6 months">1-6 months</option>
+          <option value="6-12 months">6-12 months</option>
+          <option value="Over a year">Over a year</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="q3">Have you sought therapy before?</label>
+        <select id="q3" name="q3" required>
+          <option value="">Select an option</option>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="q4">What are your goals for therapy?</label>
+        <textarea id="q4" name="q4" required></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="q5">Preferred days and times for sessions?</label>
+        <input type="text" id="q5" name="q5" required>
+      </div>
+
+      <button type="submit">Submit</button>
+
+      <p class="disclaimer">By submitting this form, you agree to our privacy policy and terms of service.</p>
+    </form>
+  </div>
+
+</body>
+</html>
+
+
+

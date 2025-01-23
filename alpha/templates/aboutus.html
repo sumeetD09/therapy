@@ -1,0 +1,336 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<!-- Breadcrumb Section Begin -->
+ <style>
+    /* General Reset */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+/* Breadcrumb Section */
+.breadcrumb-option {
+    background: #f9f9f9;
+    padding: 20px 0;
+    border-bottom: 1px solid #ddd;
+}
+.breadcrumb__text h4 {
+    font-size: 24px;
+    font-weight: bold;
+}
+.breadcrumb__links a {
+    color: #007bff;
+    text-decoration: none;
+    margin-right: 10px;
+}
+.breadcrumb__links span {
+    color: #6c757d;
+}
+
+/* About Section */
+.about {
+    padding: 60px 0;
+    background: #fff;
+}
+.about__pic img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+.about__item h4 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.about__item p {
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Testimonial Section */
+.testimonial {
+    display: flex;
+    align-items: center;
+    background: #f7f7f7;
+    padding: 60px 0;
+}
+.testimonial__text {
+    padding: 30px;
+    background: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+.testimonial__text p {
+    font-style: italic;
+    color: #333;
+}
+.testimonial__author {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+.testimonial_author_pic img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.testimonial_author_text h5 {
+    font-weight: bold;
+    margin: 0;
+}
+.testimonial_author_text p {
+    font-size: 14px;
+    color: #777;
+}
+
+/* Counter Section */
+.counter {
+    background: #f9f9f9;
+    padding: 60px 0;
+    text-align: center;
+}
+.counter__item {
+    margin-bottom: 20px;
+}
+.counter_item_number {
+    font-size: 40px;
+    font-weight: bold;
+    color: #007bff;
+}
+.counter span {
+    font-size: 16px;
+    color: #333;
+}
+
+/* Team Section */
+.team {
+    padding: 60px 0;
+}
+.section-title span {
+    font-size: 18px;
+    color: #6c757d;
+    display: block;
+    margin-bottom: 10px;
+}
+.section-title h2 {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.team__item {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.team__item img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+.team__item h4 {
+    font-size: 18px;
+    font-weight: bold;
+}
+.team__item span {
+    color: #777;
+    font-size: 14px;
+}
+
+/* Clients Section */
+.clients {
+    background: #f9f9f9;
+    padding: 60px 0;
+    text-align: center;
+}
+.clients h2 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+ </style>
+<section class="breadcrumb-option">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcrumb__text">
+                    <h4>About Us</h4>
+                    <div class="breadcrumb__links">
+                        <a href="{% url 'index' %}">Home</a>
+                        <span>About Us</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Breadcrumb Section End -->
+
+<!-- About Section Begin -->
+<section class="about spad">
+    <div class="container">
+        <div class="container-fluid   px-0">
+            <div id="carouselExampleDark" class="carousel carousel slide">
+              <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="10000">
+                  <img src="https://www.shutterstock.com/image-vector/psychologist-listening-patient-mental-therapy-600nw-2163470743.jpg" class="d-block w-100" alt="..." style="width: 1600px; height: 600px;">
+                  <div class="carousel-caption d-none d-md-block">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-6">
+                <div class="about__item">
+                    <h4>Who We Are?</h4>
+                    <p>Think of us as your cozy corner on the internet—a safe, judgment-free zone where mental wellness meets modern technology.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6">
+                <div class="about__item">
+                    <h4>What We Do?</h4>
+                    <p>We work with incredible therapists who are passionate about helping you—yes, YOU—live your best life.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6">
+                <div class="about__item">
+                    <h4>Why Choose Us?</h4>
+                    <p>Because you deserve a space that feels like your therapy place: warm, welcoming, and designed with you in mind.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- About Section End -->
+
+<!-- Counter Section Begin -->
+<section class="counter spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="counter__item">
+                    <div class="counter_item_number">
+                        <h2 class="cn_num">2500</h2>
+                    </div>
+                    <span>Clients</span>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="counter__item">
+                    <div class="counter_item_number">
+                        <h2 class="cn_num">8</h2>
+                    </div>
+                    <span>Languages</span>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="counter__item">
+                    <div class="counter_item_number">
+                        <h2 class="cn_num">10</h2>
+                    </div>
+                    <span>Therapists</span>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="counter__item">
+                    <div class="counter_item_number">
+                        <h2 class="cn_num">11500</h2>
+                    </div>
+                    <span>Sessions</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Counter Section End -->
+
+<!-- Team Section Begin -->
+<section class="team spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-title">
+                    <span>Our Team</span>
+                    <h2>Meet Our Team</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="team__item">
+                    <img src="https://d35oenyzp35321.cloudfront.net/doctor_nisha_b6e358f471.jpg">
+                    <h4>Dr. Nisha Khanna</h4>
+                    <span>Clinical Psychologist</span>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="team__item">
+                    <img src="https://medavas.com/wp-content/uploads/2024/04/harsh-psychologist-in-malad-mumbai-maharashtra-india.jpg" alt="Dr. Harsh Malhotra">
+                    <h4>Dr. Harsh Malhotra</h4>
+                    <span>Counseling Psychologist</span>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="team__item">
+                    <img src="https://www.centerformentalhealth.in/wp-content/uploads/2024/03/Arpita-Misra.jpg" alt="Dr. Arpita Misra">
+                    <h4>Dr. Arpita Misra</h4>
+                    <span>Developmental Psychologist</span>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="team__item">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgsknpJFnJ4Ud2TKemduIMV42WSgv66_cHjw&s" alt="Dr. Aakanksha">
+                    <h4>Dr. Aakanksha</h4>
+                    <span>Personality Psychologist</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Team Section End -->
+
+<!-- Client Section Begin -->
+<section class="clients spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-title">
+                    <span>Your Comfort, Our Priority</span>
+                    <h2>Languages</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3 col-md-4 col-sm-4 col-6 pt-3">
+                <h2>HINDI</h2>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-4 col-6">
+                <h2>ENGLISH</h2>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-4 col-6">
+                <h2>GUJARATI</h2>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-4 col-6">
+                <h2>TELUGU</h2>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-4 col-6">
+                <h2>BANGLA</h2>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-4 col-6">
+                <h2>PUNJABI</h2>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-4 col-6">
+                <h2>MALAYALAM</h2>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-4 col-6">
+                <h2>TAMIL</h2>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Client Section End -->
+{% endblock content %}
