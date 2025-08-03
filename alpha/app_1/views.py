@@ -11,36 +11,10 @@ from django.contrib.auth import login, authenticate
 from .models import UserProfile,Booking,Payment
 
 
-
-
-#from .forms import SignInForm
-
-
 # Create your views here.
 def index(request):
     return render(request,'index.html')
     #return HttpResponse("Hello, World! This is the Alpha application.")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 def contact(request):
     return HttpResponse(" this is about contact page")
@@ -85,11 +59,6 @@ def therapy_questionnaire_view(request):
         return redirect("your_T")
 
     return render(request, "questions_p.html")
-
-
-
-
-
 
 def signup(request):
     if request.method == 'POST':
@@ -141,12 +110,6 @@ def signup(request):
 def therapy_registration(request):
     return render(request, "therapy_reg.html") 
 
-
-
-
-
-
-
 def your_T(request):
     return render(request, "your_T.html")
 
@@ -156,30 +119,35 @@ from django.shortcuts import render, redirect
 from .models import Booking
 from django.contrib import messages
 
-def booking_view(request):
+from django.shortcuts import render, redirect
+from django.http import HttpResponse
+from .models import Booking
+
+def book_session(request):
     if request.method == 'POST':
-        full_name = request.POST.get('full-name')
-        email = request.POST.get('email')
-        phone = request.POST.get('phone')
-        date = request.POST.get('date')
-        time = request.POST.get('time')
+        full_name = request.POST['full-name']
+        email = request.POST['email']
+        phone = request.POST['phone']
+        date = request.POST['date']
+        time = request.POST['time']
         message = request.POST.get('message', '')
 
-        # Save booking to the database
-        booking = Booking(
+        # Create a new booking entry
+        booking = Booking.objects.create(
             full_name=full_name,
             email=email,
             phone=phone,
             date=date,
             time=time,
-            message=message
+            message=message,
         )
         booking.save()
-        messages.success(request, 'Your booking has been confirmed!')
 
-        return redirect('payment')
+        # Redirect to confirmation page
+        return render(request, 'payment')
 
     return render(request, 'booking.html')
+
 
 
 from django.shortcuts import render, redirect
@@ -228,7 +196,7 @@ def payment_view(request):
             # Validate required fields
             if not all([card_number, card_holder_name, expiry_date, cvv]):
                 messages.error(request, 'All credit card fields are required.')
-                return redirect('payment')
+                return redirect(request,'payment')
 
             # # Basic credit card validation (length, numbers)
             # if len(card_number) not in [13, 16] or not card_number.isdigit():

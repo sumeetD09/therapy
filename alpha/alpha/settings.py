@@ -125,11 +125,28 @@ STATIC_URL = '/static/'
 # added manulally 
 STATICFILES_DIRS = [
     BASE_DIR / "static",
-    "/var/www/static/",
+    '/var/www/static/',
 ]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
+# settings.py
+
+# Email Backend Configuration
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'your-email@gmail.com'  # Replace with your Gmail address
+EMAIL_HOST_PASSWORD = 'your-email-password'  # Replace with your Gmail password
+DEFAULT_FROM_EMAIL = 'your-email@gmail.com'  # The email address from which emails will be sent
+
+# Optional - set the email subject prefix (useful in production)
+EMAIL_SUBJECT_PREFIX = '[My Therapy Place] '
+
+# Fail silently if there's an error while sending emails (optional)
+EMAIL_FAIL_SILENTLY = False
+
 
 
 

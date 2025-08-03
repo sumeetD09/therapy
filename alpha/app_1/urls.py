@@ -34,7 +34,12 @@ urlpatterns = [
     
 
 
-    path('booking/', views.booking_view, name='booking'),
+
+
+    path('booking/', views.book_session, name='book_session'),
+
+
+    #path('booking/', views.booking_view, name='booking'),
     path('aboutus', views.aboutus, name='aboutus'),
     path('login/', views.login_view, name='login'),
     
